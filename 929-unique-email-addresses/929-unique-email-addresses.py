@@ -1,6 +1,6 @@
 class Solution:
     def numUniqueEmails(self, emails: List[str]) -> int:
-        res=[]
+        res=set()
 
         for email in emails:
             emailsplit=email.split("@")
@@ -13,6 +13,6 @@ class Solution:
             if index_plus!=-1:
                 localname=localname[:index_plus]+""
 
-            res.append(localname+"@"+domainname)
+            res.add(localname+"@"+domainname)
 
-        return len((set(res)))
+        return len(res)
